@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!-- ============================================================================
+     Smart Assistive System - ROS2 Package Manifest
+     ============================================================================
+     Dual-mode assistive system for blind and deaf-blind users.
+     Combines YOLO-based vision, spatial sensing, IMU, and Morse code haptics.
+     Target platform: Raspberry Pi 4 (4GB) running Ubuntu 22.04 + ROS2 Humble
+     ============================================================================ -->
+<package format="3">
+  <name>smart_assistive_system</name>
+  <version>1.0.0</version>
+  <description>
+    Smart Spectacles and Smart Stick assistive system for blind and deaf-blind users.
+    Features YOLO-based object detection, ultrasonic/LiDAR spatial sensing, IMU
+    orientation tracking, SLAM-based navigation, and structured Morse code haptic
+    communication. Designed for low-latency, offline, edge processing on Raspberry Pi 4.
+  </description>
+
+  <maintainer email="developer@assistive-tech.org">Smart Assistive Team</maintainer>
+  <license>Apache-2.0</license>
+
+  <url type="website">https://github.com/smart-assistive/smart-assistive-ws</url>
+
+  <!-- Build system -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- ========================================================================
+       Core ROS2 Dependencies
+       ======================================================================== -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+
+  <!-- ========================================================================
+       Vision & Image Processing
+       ======================================================================== -->
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+
+  <!-- ========================================================================
+       TF2 Transform Library (IMU orientation, coordinate frames)
+       ======================================================================== -->
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+  <!-- ========================================================================
+       SLAM Dependencies (RTAB-Map)
+       ======================================================================== -->
+  <exec_depend>rtabmap_ros</exec_depend>
+  <exec_depend>rtabmap_slam</exec_depend>
+  <exec_depend>rtabmap_viz</exec_depend>
+
+  <!-- ========================================================================
+       Launch System
+       ======================================================================== -->
+  <exec_depend>ros2launch</exec_depend>
+
+  <!-- ========================================================================
+       Testing
+       ======================================================================== -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

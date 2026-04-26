@@ -1,0 +1,24 @@
+# YOLO ONNX Model Placeholder
+# ================================
+# This file is a placeholder for the trained YOLO model in ONNX format.
+#
+# To obtain a working model:
+#
+# Option 1: Use pre-trained YOLOv5s/YOLOv8n
+#   pip install ultralytics
+#   from ultralytics import YOLO
+#   model = YOLO('yolov8n.pt')
+#   model.export(format='onnx', imgsz=416, opset=12)
+#   # Copy yolov8n.onnx to this location as best.onnx
+#
+# Option 2: Train custom model for Indian environment
+#   - Collect dataset of local obstacles (autos, cows, potholes, etc.)
+#   - Annotate using LabelImg or Roboflow
+#   - Train: yolo train data=custom.yaml model=yolov8n.pt epochs=100 imgsz=416
+#   - Export: yolo export model=best.pt format=onnx imgsz=416
+#
+# Recommended model: YOLOv8n (nano) for Raspberry Pi 4 performance
+#   - Input size: 416x416 (balance of speed and accuracy)
+#   - ~6M parameters, ~50ms inference on Pi 4
+#
+# Place the exported .onnx file here as 'best.onnx'

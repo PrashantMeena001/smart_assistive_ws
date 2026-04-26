@@ -1,0 +1,17 @@
+# RTAB-Map Database Placeholder
+# ================================
+# This file is a placeholder for the RTAB-Map SQLite database.
+# 
+# To create an actual map:
+# 1. Connect camera and IMU to Raspberry Pi
+# 2. Run: ros2 launch smart_assistive_system mapping_mode.launch.py
+# 3. Walk through the environment with the spectacles
+# 4. The map will be saved to this location automatically
+#
+# The actual .db file is a binary SQLite database created by RTAB-Map.
+# It contains:
+#   - Visual features and keypoints
+#   - 3D point clouds
+#   - Occupancy grid data
+#   - Loop closure constraints
+#   - Odometry data
